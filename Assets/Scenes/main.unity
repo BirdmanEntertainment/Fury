@@ -2133,12 +2133,12 @@ Prefab:
     - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
         type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.731424
       objectReference: {fileID: 0}
     - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.12164402
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
         type: 2}

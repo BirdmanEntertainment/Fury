@@ -59,6 +59,7 @@ public class obstacle : MonoBehaviour
     void FixedUpdate()
     {
         tr.position += moveV;
+        //transform.Translate(-moveV);
 
         if (tr.position.z < -8)
         {
