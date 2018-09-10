@@ -25,11 +25,11 @@ public class sineMovement : MonoBehaviour {
         initialY = transform.position.y;
         initialZ = transform.position.z;
         initialRotX = transform.localRotation.x;
-        Debug.Log(initialRotX);
+        //Debug.Log(initialRotX);
         initialRotY = transform.localRotation.y;
-        Debug.Log(initialRotY);
+        //Debug.Log(initialRotY);
         initialRotZ = transform.localRotation.z;
-        Debug.Log(initialRotZ);
+        //Debug.Log(initialRotZ);
         //Time.fixedDeltaTime = 1 / 60f;
     }
 	

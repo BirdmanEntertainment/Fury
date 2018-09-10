@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour {
 
     private float _highscore;
     private int _experience;
+    
 
     // MAKE THE PLAYERSTATS OBJECT A SINGLETON
     public static PlayerStats Instance;
     public void Awake()
     {
+        LoadData();
         if (Instance == null)
         {
             Instance = this;
@@ -20,15 +23,18 @@ public class PlayerStats : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        LoadData();
+        
     }
     // -----------------------------------------------
+
+    
 
     /// <summary>
     /// Loads the players statistics
     /// </summary>
     private void LoadData()
     {
+        Debug.Log("CALLED LOAD DATA");
         if (PlayerPrefs.HasKey("highscore"))
         {
             _highscore = PlayerPrefs.GetFloat("highscore");
@@ -59,11 +65,11 @@ public class PlayerStats : MonoBehaviour {
     /// <summary>
     /// Save the Players statistics
     /// </summary>
-    private void SaveData()
+    public void SaveData()
     {
         PlayerPrefs.SetFloat("highscore", _highscore);
         PlayerPrefs.SetInt("experience", _experience);
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
 
     }
 
@@ -85,4 +91,5 @@ public class PlayerStats : MonoBehaviour {
         get { return _experience; }
         set { _experience = value; }
     }
+
 }

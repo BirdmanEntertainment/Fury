@@ -40,35 +40,15 @@ public class score : MonoBehaviour
 
     void SetHighScore()
     {
-        //reader = File.OpenText(Application.persistentDataPath + "/score.txt");
-        //while (!reader.EndOfStream)
-        //{
-        //   currentHS = float.Parse(reader.ReadLine());
-        //}
-        //reader.Close();
-
-        //if (timeSurvived > currentHS)
-        //{
-        //   writer = File.CreateText(Application.persistentDataPath + "/score.txt");
-        //   writer.WriteLine(timeSurvived);
-        //   writer.Close();
-
-        //   HighScoreText.SetActive(true);
-        //}
-
         Debug.Log("SCORE SET");
 
-        //GPGDemo.Instance.IncrementAchievement(GPGSIds.achievement_rookie_runner, 1);
-        //GPGDemo.Instance.IncrementAchievement(GPGSIds.achievement_crazed_criminal, 1);
-        //GPGDemo.Instance.IncrementAchievement(GPGSIds.achievement_god_tier_gangster, 1);
-
-        //if (timeSurvived > CloudVariables.time)
-        //{
-        //    CloudVariables.time = timeSurvived;
-        //    GPGDemo.Instance.SaveData();
-        //    GPGDemo.Instance.OnAddScoreToLeaderBoard(Mathf.RoundToInt(timeSurvived) * 1000, GPGSIds.leaderboard_time);
-        //    HighScoreText.SetActive(true);
-        //}
+        if (timeSurvived > PlayerStats.Instance.Highscore)
+        {
+            PlayerStats.Instance.Highscore = timeSurvived;
+            PlayerStats.Instance.SaveData();
+            //GPGDemo.Instance.OnAddScoreToLeaderBoard(Mathf.RoundToInt(timeSurvived) * 1000, GPGSIds.leaderboard_time);
+            HighScoreText.SetActive(true);
+        }
 
     }
 

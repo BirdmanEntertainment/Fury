@@ -9,11 +9,10 @@ using UnityEngine.SceneManagement;
 public class experienceGain : MonoBehaviour
 {
 
-
     float time;
-    float currentExp;
-    float expGain = 0;
-    float combinedExp;
+    int currentExp;
+    int expGain = 0;
+    int combinedExp;
 
     bool expAdded = false;
 
@@ -40,11 +39,9 @@ public class experienceGain : MonoBehaviour
     {
         expAdded = true;
         Debug.Log("CALLED EXP ADD - " + combinedExp);
-        //if(combinedExp > CloudVariables.experience)
-        //{
-        //    CloudVariables.experience = combinedExp;
-        //    GPGDemo.Instance.SaveData();
-        //}
+
+        PlayerStats.Instance.Experience += combinedExp;
+        PlayerStats.Instance.SaveData();
         DisplayExp();
     }
 
