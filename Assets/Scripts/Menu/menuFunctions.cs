@@ -32,26 +32,26 @@ public class menuFunctions : MonoBehaviour
     string seconds;
 
     float highscore;
-    float experience;
+    int experience;
     int currentLevel = 1;
     float difference;
 
 
     const int EXP_CONSTANT = 300;
-    float[] expReqArray = new float[51];
+    int[] expReqArray = new int[51];
 
 
     void LoadData()
     {
-        highscore = CloudVariables.time;
-        experience = CloudVariables.experience;
-        //Debug.Log("RETRIEVED DATA");
+        highscore = PlayerStats.Instance.Highscore;
+        experience = PlayerStats.Instance.Experience;
+        Debug.Log("RETRIEVED DATA - " + highscore + "," + experience);
     }
 
     // Use this for initialization
     void Start()
     {
-        //LoadData();
+        LoadData();
 
         previousExpText = GameObject.Find("PreviousLevelExp").GetComponent<Text>();
         nextExpText = GameObject.Find("NextLevelExp").GetComponent<Text>();
@@ -107,20 +107,6 @@ public class menuFunctions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (GPGDemo.Instance.GetCurrentUser() != "Uninitialized" && GPGDemo.Instance.GetCurrentUser() != "")
-        //{
-        //    usernameText.text = GPGDemo.Instance.GetCurrentUser();
-        //    usernameObject.SetActive(true);
-        //    signOutButton.SetActive(true);
-        //    signInButton.SetActive(false);
-        //}
-        //else
-        //{
-        //    usernameObject.SetActive(false);
-        //    signOutButton.SetActive(false);
-        //    signInButton.SetActive(true);
-        //}
-
 
     }
 
