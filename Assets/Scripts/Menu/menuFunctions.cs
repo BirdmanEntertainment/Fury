@@ -41,13 +41,12 @@ public class menuFunctions : MonoBehaviour
     float[] expReqArray = new float[51];
 
 
-    //void LoadData()
-    //{
-    //    GPGDemo.Instance.LoadData();
-    //    highscore = CloudVariables.time;
-    //    experience = CloudVariables.experience;
-    //    //Debug.Log("RETRIEVED DATA");
-    //}
+    void LoadData()
+    {
+        highscore = CloudVariables.time;
+        experience = CloudVariables.experience;
+        //Debug.Log("RETRIEVED DATA");
+    }
 
     // Use this for initialization
     void Start()
@@ -77,19 +76,6 @@ public class menuFunctions : MonoBehaviour
         {
             currentLevel = 50;
         }
-
-        if(currentLevel == 25)
-        {
-            //GPGDemo.Instance.UnlockAchievement(GPGSIds.achievement_on_the_grind);
-        }
-
-        if(currentLevel == 50)
-        {
-            //GPGDemo.Instance.UnlockAchievement(GPGSIds.achievement_we_made_it);
-        }
-
-        //GPGDemo.Instance.OnAddScoreToLeaderBoard(currentLevel, GPGSIds.leaderboard_level);
-        //GPGDemo.Instance.OnAddScoreToLeaderBoard((int)experience, GPGSIds.leaderboard_experience);
 
         difference = Mathf.InverseLerp(expReqArray[currentLevel - 1], expReqArray[currentLevel], experience);
 
