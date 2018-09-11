@@ -16,7 +16,7 @@ public class spawner : MonoBehaviour
     //public GameObject obstacleLampSingle;
     const float SPAWN_Y = 0.5f;
     const float SPAWN_Z = 150f;
-    const int RAIN_AMOUNT = 1;
+    const int RAIN_AMOUNT = 2;
 
     int trafficCount = 0;
 

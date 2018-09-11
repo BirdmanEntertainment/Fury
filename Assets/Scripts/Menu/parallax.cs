@@ -7,6 +7,7 @@ public class parallax : MonoBehaviour
 {
 
     Vector3 vecParallax;
+    Vector3 vecParallaxLerped;
     float filter = 5.0f;
 
     float degreesX;
@@ -56,12 +57,16 @@ public class parallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vecParallax = Vector3.Lerp(vecParallax, Input.acceleration / 2, filter * Time.deltaTime);
+        vecParallax = new Vector3(Input.acceleration.x, Input.acceleration.y + 1, Input.acceleration.z);
+        Debug.Log(vecParallax);
+        vecParallaxLerped = Vector3.Lerp(vecParallaxLerped, Input.acceleration, filter * Time.deltaTime);
 
-        vecParallax.z = this.transform.position.z;
-        this.transform.position = vecParallax;
+        vecParallaxLerped.z = this.transform.position.z;
+        this.transform.position = vecParallaxLerped;
 
         angle = Vector3.Lerp(angle, new Vector3(degreesX, degreesY, degreesZ), filter * Time.deltaTime);
+
+        this.transform.localRotation = Quaternion.Euler(vecParallaxLerped);
         this.transform.localRotation = Quaternion.Euler(angle);
 
     }

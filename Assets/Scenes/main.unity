@@ -2120,35 +2120,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114815517614530334, guid: f8753d255571e6646a40d9680ebbbe92,
+    - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
         type: 2}
-      propertyPath: moveSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65158520792255284, guid: f8753d255571e6646a40d9680ebbbe92,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Intensity
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
         type: 2}
-      propertyPath: m_Color.g
-      value: 0.731424
-      objectReference: {fileID: 0}
-    - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114815517614530334, guid: f8753d255571e6646a40d9680ebbbe92,
-        type: 2}
-      propertyPath: touchInput
-      value: 1
+      propertyPath: m_Flare
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8753d255571e6646a40d9680ebbbe92, type: 2}

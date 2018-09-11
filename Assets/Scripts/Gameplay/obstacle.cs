@@ -8,7 +8,7 @@ public class obstacle : MonoBehaviour
 
     string objTag = "";
 
-    float trafficSpeed = -0.9f;
+    float trafficSpeed = -1.2f;
     float obstacleSpeed = -1.5f;
     float rainSpeed = -1.5f;
 
