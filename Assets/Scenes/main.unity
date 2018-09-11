@@ -225,7 +225,7 @@ MonoBehaviour:
   damping: 0.05
   offsetX: 0
   offsetY: -0.5
-  offsetZ: 0.58
+  offsetZ: 0.79
 --- !u!114 &80037294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,7 +2094,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4889150419825296, guid: f8753d255571e6646a40d9680ebbbe92, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4889150419825296, guid: f8753d255571e6646a40d9680ebbbe92, type: 2}
       propertyPath: m_LocalPosition.z
