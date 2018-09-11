@@ -223,7 +223,7 @@ MonoBehaviour:
   shakeAmount: 0
   maxSpeed: 1500
   damping: 0.05
-  offsetX: 1.82
+  offsetX: 0
   offsetY: -0.5
   offsetZ: 0.79
 --- !u!114 &80037294
@@ -289,7 +289,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 80037292}
-  m_LocalRotation: {x: 0.31653172, y: 0.066151716, z: -0.02213405, w: 0.9460136}
+  m_LocalRotation: {x: 0.31730464, y: 0, z: 0, w: 0.94832367}
   m_LocalPosition: {x: 0, y: 0, z: 0.48}
   m_LocalScale: {x: 0.01, y: 0.010192504, z: 0.010192504}
   m_Children:
@@ -302,7 +302,7 @@ RectTransform:
   - {fileID: 507513396}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 37, y: 8, z: 0}
+  m_LocalEulerAnglesHint: {x: 37, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.14, y: -0.17}
@@ -725,7 +725,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 512959507}
-  m_LocalRotation: {x: 0.29125917, y: 0.083347484, z: -0.025481887, w: 0.95266575}
+  m_LocalRotation: {x: 0.29237175, y: 0, z: 0, w: 0.9563048}
   m_LocalPosition: {x: 0, y: 9.82, z: -10.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -734,7 +734,7 @@ Transform:
   - {fileID: 2006184618}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 34, y: 10, z: 0}
+  m_LocalEulerAnglesHint: {x: 34, y: 0, z: 0}
 --- !u!114 &512959512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
   shakeAmount: 0.5
   maxSpeed: 200
   damping: 0.2
-  offsetX: -2
+  offsetX: 0
   offsetY: 12
   offsetZ: -10.38
 --- !u!114 &512959513
@@ -2143,6 +2143,11 @@ Prefab:
     - target: {fileID: 108563756085659552, guid: f8753d255571e6646a40d9680ebbbe92,
         type: 2}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815517614530334, guid: f8753d255571e6646a40d9680ebbbe92,
+        type: 2}
+      propertyPath: touchInput
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
