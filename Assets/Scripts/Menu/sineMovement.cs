@@ -34,7 +34,7 @@ public class sineMovement : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	void Update () {
         val += speed;
 
         sineValue = Mathf.Sin(val);
