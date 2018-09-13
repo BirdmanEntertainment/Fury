@@ -2660,7 +2660,7 @@ Prefab:
     - target: {fileID: 198432800752494306, guid: 9ae7d8d0e4265ac4a95d64065ed39d25,
         type: 2}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.1
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 198432800752494306, guid: 9ae7d8d0e4265ac4a95d64065ed39d25,
         type: 2}
@@ -2670,7 +2670,7 @@ Prefab:
     - target: {fileID: 198432800752494306, guid: 9ae7d8d0e4265ac4a95d64065ed39d25,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 68.88
+      value: 72.79
       objectReference: {fileID: 0}
     - target: {fileID: 198432800752494306, guid: 9ae7d8d0e4265ac4a95d64065ed39d25,
         type: 2}
@@ -2685,6 +2685,11 @@ Prefab:
     - target: {fileID: 198432800752494306, guid: 9ae7d8d0e4265ac4a95d64065ed39d25,
         type: 2}
       propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198432800752494306, guid: 9ae7d8d0e4265ac4a95d64065ed39d25,
+        type: 2}
+      propertyPath: InitialModule.maxNumParticles
       value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
