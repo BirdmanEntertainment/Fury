@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerStats : MonoBehaviour {
 
-    private float _highscore;
-    private int _experience;
+
+    public static StatItem highscore;
+    public static StatItem experience;
+    public List<StatItem> statItemList = new List<StatItem>();
     
 
     // MAKE THE PLAYERSTATS OBJECT A SINGLETON
     public static PlayerStats Instance;
     public void Awake()
     {
+        highscore = new StatItem("highscore", 0);
+        experience = new StatItem("experience", 0);
         LoadData();
         if (Instance == null)
         {
@@ -34,24 +39,37 @@ public class PlayerStats : MonoBehaviour {
     /// </summary>
     private void LoadData()
     {
-        Debug.Log("CALLED LOAD DATA");
-        if (PlayerPrefs.HasKey("highscore"))
+        foreach (StatItem s in statItemList)
         {
-            _highscore = PlayerPrefs.GetFloat("highscore");
+            try
+            {   
+                s.Content = PlayerPrefs.GetFloat(s.Key);
+            } 
+            catch(Exception ex)
+            {
+                PlayerPrefs.SetFloat(s.Key, s.Content);
+            }
+            
         }
-        else
-        {
-            PlayerPrefs.SetFloat("highscore", 0);
-        }
+        
+        //Debug.Log("CALLED LOAD DATA");
+        // if (PlayerPrefs.HasKey("highscore"))
+        // {
+        //     _highscore = PlayerPrefs.GetFloat("highscore");
+        // }
+        // else
+        // {
+        //     PlayerPrefs.SetFloat("highscore", 0);
+        // }
 
-        if (PlayerPrefs.HasKey("experience"))
-        {
-            _experience = PlayerPrefs.GetInt("experience");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("experience", 0);
-        }
+        // if (PlayerPrefs.HasKey("experience"))
+        // {
+        //     _experience = PlayerPrefs.GetInt("experience");
+        // }
+        // else
+        // {
+        //     PlayerPrefs.SetInt("experience", 0);
+        // }
     }
 
     /// <summary>
@@ -67,29 +85,17 @@ public class PlayerStats : MonoBehaviour {
     /// </summary>
     public void SaveData()
     {
-        PlayerPrefs.SetFloat("highscore", _highscore);
-        PlayerPrefs.SetInt("experience", _experience);
+        foreach (StatItem s in statItemList)
+        {
+            PlayerPrefs.SetFloat(s.Key, s.Content);
+        }
+
+        PlayerPrefs.Save();
+
+        // PlayerPrefs.SetFloat("highscore", _highscore.Key);
+        // PlayerPrefs.SetInt("experience", _experience);
         //PlayerPrefs.Save();
 
-    }
-
-    /// <summary>
-    /// The players highscore
-    /// </summary>
-    public float Highscore
-    {
-        get { return _highscore; }
-        set { _highscore = value; }
-    }
-
-
-    /// <summary>
-    /// The players experience points
-    /// </summary>
-    public int Experience
-    {
-        get { return _experience; }
-        set { _experience = value; }
     }
 
 }
