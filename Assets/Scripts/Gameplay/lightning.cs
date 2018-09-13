@@ -7,6 +7,8 @@ public class lightning : MonoBehaviour
 
     int flashChance = 0;
 
+    public AudioSource thunderclap;
+
     public GameObject lightning1;
     public GameObject lightning2;
     public GameObject lightning3;
@@ -41,21 +43,23 @@ public class lightning : MonoBehaviour
         if (flashChance == 1)
         {
             //Debug.Log("CALLED");
+            thunderclap.Play();
             StartCoroutine(flash(lightning1, flashLight));
+            
         }
         else if (flashChance == 2)
         {
-
+            thunderclap.Play();
             StartCoroutine(flash(lightning2, flashLight));
         }
         else if (flashChance == 3)
         {
-
+            thunderclap.Play();
             StartCoroutine(flash(lightning3, flashLight));
         }
         else if (flashChance == 4)
         {
-
+            thunderclap.Play();
             StartCoroutine(flash(lightning4, flashLight));
         }
     }

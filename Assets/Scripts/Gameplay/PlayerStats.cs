@@ -6,18 +6,19 @@ using System;
 
 public class PlayerStats : MonoBehaviour {
 
-
-    public static StatItem highscore;
-    public static StatItem experience;
-    public List<StatItem> statItemList = new List<StatItem>();
+    private float _highscore;
+    private int _experience;
+    private int _tokens;
     
 
     // MAKE THE PLAYERSTATS OBJECT A SINGLETON
     public static PlayerStats Instance;
     public void Awake()
     {
-        highscore = new StatItem("highscore", 0);
-        experience = new StatItem("experience", 0);
+        _highscore = 0;
+        _experience = 0;
+        _tokens = 0;
+
         LoadData();
         if (Instance == null)
         {
@@ -32,44 +33,38 @@ public class PlayerStats : MonoBehaviour {
     }
     // -----------------------------------------------
 
-    
-
     /// <summary>
     /// Loads the players statistics
     /// </summary>
     private void LoadData()
     {
-        foreach (StatItem s in statItemList)
+        Debug.Log("CALLED LOAD DATA");
+        if (PlayerPrefs.HasKey("highscore"))
         {
-            try
-            {   
-                s.Content = PlayerPrefs.GetFloat(s.Key);
-            } 
-            catch(Exception ex)
-            {
-                PlayerPrefs.SetFloat(s.Key, s.Content);
-            }
-            
+            _highscore = PlayerPrefs.GetFloat("highscore");
         }
-        
-        //Debug.Log("CALLED LOAD DATA");
-        // if (PlayerPrefs.HasKey("highscore"))
-        // {
-        //     _highscore = PlayerPrefs.GetFloat("highscore");
-        // }
-        // else
-        // {
-        //     PlayerPrefs.SetFloat("highscore", 0);
-        // }
+        else
+        {
+            PlayerPrefs.SetFloat("highscore", 0);
+        }
 
-        // if (PlayerPrefs.HasKey("experience"))
-        // {
-        //     _experience = PlayerPrefs.GetInt("experience");
-        // }
-        // else
-        // {
-        //     PlayerPrefs.SetInt("experience", 0);
-        // }
+        if (PlayerPrefs.HasKey("experience"))
+        {
+            _experience = PlayerPrefs.GetInt("experience");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("experience", 0);
+        }
+
+        if (PlayerPrefs.HasKey("tokens"))
+        {
+            _tokens = PlayerPrefs.GetInt("tokens");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("tokens", 0);
+        }
     }
 
     /// <summary>
@@ -85,17 +80,28 @@ public class PlayerStats : MonoBehaviour {
     /// </summary>
     public void SaveData()
     {
-        foreach (StatItem s in statItemList)
-        {
-            PlayerPrefs.SetFloat(s.Key, s.Content);
-        }
-
+        PlayerPrefs.SetFloat("highscore", _highscore);
+        PlayerPrefs.SetInt("experience", _experience);
+        PlayerPrefs.SetInt("tokens", _tokens);
         PlayerPrefs.Save();
-
-        // PlayerPrefs.SetFloat("highscore", _highscore.Key);
-        // PlayerPrefs.SetInt("experience", _experience);
-        //PlayerPrefs.Save();
 
     }
 
+    public float Highscore
+    {
+        get { return _highscore; }
+        set { _highscore = value; }
+    }
+
+    public int Experience
+    {
+        get { return _experience; }
+        set { _experience = value; }
+    }
+
+    public int Tokens
+    {
+        get { return _tokens; }
+        set { _tokens = value; }
+    }
 }

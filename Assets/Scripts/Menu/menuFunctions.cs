@@ -18,8 +18,7 @@ public class menuFunctions : MonoBehaviour
     Text previousExpText;
     Text nextExpText;
     Text currentExpText;
-
-    public AudioSource click;
+    Text tokensText;
 
     Image progessbar;
 
@@ -56,6 +55,7 @@ public class menuFunctions : MonoBehaviour
         previousExpText = GameObject.Find("PreviousLevelExp").GetComponent<Text>();
         nextExpText = GameObject.Find("NextLevelExp").GetComponent<Text>();
         currentExpText = GameObject.Find("CurrentLevelExp").GetComponent<Text>();
+        tokensText = GameObject.Find("TokensText").GetComponent<Text>();
 
         expReqArray[0] = 0;
 
@@ -94,6 +94,7 @@ public class menuFunctions : MonoBehaviour
         string seconds = (highscore % 60).ToString("00");
 
         scoreText.text = "Local Best Time - " + minutes + ":" + seconds;
+        tokensText.text = PlayerStats.Instance.Tokens.ToString();
         levelText.text = currentLevel.ToString();
 
         progessbar.fillAmount = difference;
@@ -112,7 +113,6 @@ public class menuFunctions : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        click.Play();
         levelControl.StartCoroutine("Fade", sceneName);
         //SceneManager.LoadScene(sceneName);
     }

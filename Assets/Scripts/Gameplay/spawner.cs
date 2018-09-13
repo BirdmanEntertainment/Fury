@@ -12,7 +12,9 @@ public class spawner : MonoBehaviour
     Vector3 lampSpawnLocationRight;
 
     public GameObject traffic;
+    public GameObject token;
     public GameObject raindrop;
+
     //public GameObject obstacleLampSingle;
     const float SPAWN_Y = 0.5f;
     const float SPAWN_Z = 150f;
@@ -51,11 +53,20 @@ public class spawner : MonoBehaviour
         }
     }
 
+    void SpawnToken()
+    {
+        Instantiate(token, new Vector3(trafficRangeArray[Random.Range(0, trafficRangeArray.Length)], 1, spawnLocationTraffic.z), Quaternion.Euler(0, 0, 0));
+    }
 
     // Update is called once per frame
     void Update()
     {
         frameCount = Time.frameCount;
+
+        if(frameCount % Random.Range(120, 240) == 0)
+        {
+            SpawnToken();
+        }
 
         if (frameCount % 120 == 0 && trafficCount != MAX_TRAFFIC)
         {

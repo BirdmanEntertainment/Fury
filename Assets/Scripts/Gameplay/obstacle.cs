@@ -61,7 +61,7 @@ public class obstacle : MonoBehaviour
         tr.position += moveV;
         //transform.Translate(-moveV);
 
-        if (tr.position.z < -8)
+        if (tr.position.z < -50)
         {
             if (isTraffic)
             {

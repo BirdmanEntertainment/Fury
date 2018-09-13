@@ -6,12 +6,12 @@ public class StatItem : MonoBehaviour {
 
 	private string _key;
 
-	private float _content;
+	private int _content;
 
-	public StatItem(string key, float value)
+	public StatItem(string key, int content)
 	{
 		_key = key;
-		_content = value;
+		_content = content;
 	}
 
 	public string Key
@@ -19,7 +19,7 @@ public class StatItem : MonoBehaviour {
 		get { return _key; }
 	}
 
-	public float Content
+	public int Content
 	{
 		get { return _content; }
 		set { _content = value; }
