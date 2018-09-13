@@ -18,7 +18,7 @@ public class spawner : MonoBehaviour
     //public GameObject obstacleLampSingle;
     const float SPAWN_Y = 0.5f;
     const float SPAWN_Z = 150f;
-    const int RAIN_AMOUNT = 2;
+    const int RAIN_AMOUNT = 5;
 
     int trafficCount = 0;
 
@@ -42,15 +42,15 @@ public class spawner : MonoBehaviour
         spawnLocationTraffic.x = trafficRangeArray[Random.Range(0, trafficRangeArray.Length)];
         Instantiate(traffic, spawnLocationTraffic, Quaternion.Euler(0, 180, 0));
 
-        for (int i = 0; i < RAIN_AMOUNT; i++)
-        {
-            spawnLocationRain.z = (i + 1) * (25 / RAIN_AMOUNT);
-            Debug.Log("SPAWN LOCATION Z = " + spawnLocationRain.z);
-            spawnLocationRain.x = Random.Range(-2f, 2f);
-            spawnLocationRain.y = 0f;
-            Instantiate(raindrop, spawnLocationRain, Quaternion.Euler(90, 0, 0));
-            spawnLocationRain.z = 25f;
-        }
+        //for (int i = 0; i < RAIN_AMOUNT; i++)
+        //{
+        //    spawnLocationRain.z = ((i * 3) + 1) * (25 / RAIN_AMOUNT);
+        //    Debug.Log("SPAWN LOCATION Z = " + spawnLocationRain.z);
+        //    spawnLocationRain.x = Random.Range(-2f, 2f);
+        //    spawnLocationRain.y = 0f;
+        //    Instantiate(raindrop, spawnLocationRain, Quaternion.Euler(90, 0, 0));
+        //    spawnLocationRain.z = 25f;
+        //}
     }
 
     void SpawnToken()
