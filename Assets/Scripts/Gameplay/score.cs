@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.SceneManagement;
-using UnityEngine.Advertisements;
 
 public class score : MonoBehaviour
 {
@@ -57,14 +56,6 @@ public class score : MonoBehaviour
         endCalled = true;
         Debug.Log("END CALLED");
         SetHighScore();
-
-        adChance = Random.Range(0, 5);
-
-        // if (adChance == 0)
-        // {
-        //     Advertisement.Show();
-        // }
-
     }
 
 
