@@ -80,6 +80,7 @@ public class PlayerStats : MonoBehaviour {
     /// </summary>
     public void SaveData()
     {
+        // Set each playerpref to the respective variable stored
         PlayerPrefs.SetFloat("highscore", _highscore);
         PlayerPrefs.SetInt("experience", _experience);
         PlayerPrefs.SetInt("tokens", _tokens);
@@ -87,18 +88,21 @@ public class PlayerStats : MonoBehaviour {
 
     }
 
+    // The players highscore
     public float Highscore
     {
         get { return _highscore; }
         set { _highscore = value; }
     }
 
+    // The players total experience points
     public int Experience
     {
         get { return _experience; }
         set { _experience = value; }
     }
 
+    // The players total number of Tokenss
     public int Tokens
     {
         get { return _tokens; }

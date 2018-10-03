@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MusicHandler : MonoBehaviour
 {
@@ -9,8 +10,12 @@ public class MusicHandler : MonoBehaviour
     public AudioSource menu;
     public AudioSource gameplay;
 
+    [Range (0, 1)]
+    public float mainVolume;
+
     public float fadeRate = 0.01f;
 
+    // MAKE THE MUSICHANDLER A SINGLETON ---
     public static MusicHandler Instance;
     public void Awake()
     {
@@ -24,14 +29,21 @@ public class MusicHandler : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Use this for initialization
+    // --------------------------------------
+
     void Start()
     {
+        if(PlayerPrefs.HasKey("mainVolume"))
+        {
+            mainVolume = PlayerPrefs.GetFloat("mainVolume");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        AudioListener.volume = mainVolume;
         if (SceneManager.GetActiveScene().name == "titlescreen")
         {
             if (menu.isPlaying == false)
@@ -54,6 +66,8 @@ public class MusicHandler : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "main")
         {
+
+
             if (gameplay.isPlaying == false)
             {
                 gameplay.Play();

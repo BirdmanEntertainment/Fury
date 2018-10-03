@@ -18,7 +18,9 @@ public class menuFunctions : MonoBehaviour
     Text previousExpText;
     Text nextExpText;
     Text currentExpText;
+
     Text tokensText;
+    Text tokensTextShop;
 
     Image progessbar;
 
@@ -56,9 +58,10 @@ public class menuFunctions : MonoBehaviour
         nextExpText = GameObject.Find("NextLevelExp").GetComponent<Text>();
         currentExpText = GameObject.Find("CurrentLevelExp").GetComponent<Text>();
         tokensText = GameObject.Find("TokensText").GetComponent<Text>();
+        tokensTextShop = GameObject.Find("TokensTextShop").GetComponent<Text>();
+
 
         expReqArray[0] = 0;
-
 
         for (int i = 1; i < expReqArray.Length; i++)
         {
@@ -95,6 +98,7 @@ public class menuFunctions : MonoBehaviour
 
         scoreText.text = "Local Best Time - " + minutes + ":" + seconds;
         tokensText.text = PlayerStats.Instance.Tokens.ToString();
+        tokensTextShop.text = PlayerStats.Instance.Tokens.ToString();
         levelText.text = currentLevel.ToString();
 
         progessbar.fillAmount = difference;
