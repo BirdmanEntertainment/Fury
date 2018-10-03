@@ -18,12 +18,16 @@ public class LevelControl : MonoBehaviour {
         Debug.Log("FADE CALLED");
         anim.SetBool("Fade", true);
 
-        int adChance = Random.Range(0, 5);
-
-        if (adChance == 0)
+        if(SceneManager.GetActiveScene().name == "main" && levelName == "main")
         {
-            Advertisement.Show();
+            int adChance = Random.Range(0, 5);
+
+            if (adChance == 0)
+            {
+                Advertisement.Show();
+            }
         }
+        
 
         yield return new WaitUntil(() => black.color.a == 1);
 

@@ -9011,7 +9011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1988246855}
   gameplay: {fileID: 1988246854}
-  mainVolume: 0
+  mainVolume: 1
   fadeRate: 0.01
 --- !u!4 &1988246857
 Transform:
