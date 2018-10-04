@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         transform.Translate(0, 0, -1.2f, Space.World);
 
         if (transform.position.z < -8)

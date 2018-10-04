@@ -12,7 +12,7 @@ public class obstacle : MonoBehaviour
     float obstacleSpeed = -1.5f;
     float rainSpeed = -1.5f;
 
-    const float SPAWN_Z = 150f;
+    const float SPAWN_Z = 250f;
     Vector3 newSpawnLocationTraffic;
     Vector3 newSpawnLocationRain;
     float[] trafficRangeArray = new float[7] { -7.38f, -4.92f, -2.46f, 0, 2.46f, 4.92f, 7.38f };
